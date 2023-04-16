@@ -40,6 +40,10 @@ export default function App() {
       setHasPermission(status === 'granted');
     })();
   }, []);
+
+
+
+  
   if (hasPermission === null) {
     return <Text>Mehmood Alam</Text>;
     // return <View />;
