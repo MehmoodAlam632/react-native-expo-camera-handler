@@ -31,8 +31,6 @@ export default function App() {
   const [camera, setCamera] = useState(null);
   const [image, setImage] = useState(null);
   const [base64, setBase64] = useState(null);
-  console.log('type', type)
-  console.log('Camera', Camera)
 
   useEffect(() => {
     (async () => {
@@ -40,6 +38,7 @@ export default function App() {
       setHasPermission(status === 'granted');
     })();
   }, []);
+  
   if (hasPermission === null) {
     return <Text>Mehmood Alam</Text>;
     // return <View />;
@@ -57,7 +56,6 @@ export default function App() {
         encoding: FileSystem.EncodingType.Base64,
       });
       setBase64(fsRead)
-      // console.log('fsRead', fsRead);
     }
   }
   return (
